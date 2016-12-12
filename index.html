@@ -22,6 +22,11 @@ title: Downloads [Free]
 			{% endif %}
 		{% endfor %}
 		{% for asset in release.assets %}
+			{% if asset.name contains "MacOSX-x86_64.dmg" %}
+			<a href="{{ asset.browser_download_url }}">OS X</a>
+			{% endif %}
+		{% endfor %}
+		{% for asset in release.assets %}
 			{% if asset.name contains "MacOSX109-x86_64.dmg" %}
 			<a href="{{ asset.browser_download_url }}">OS X Mavericks</a>
 			{% endif %}
