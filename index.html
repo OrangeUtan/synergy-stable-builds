@@ -6,76 +6,28 @@ description: Synergy lets you easily share a single mouse and keyboard between m
 <h1>{% if page.title %} {{ page.title }} | {% endif %} {{ site.name }}</h1>
 <div class="table-responsive-vertical shadow-z-1">
 <table id="table" class="table">
-	<tbody>
-{% assign sorted_releases = (site.github.releases | sort: 'tag_name') %}
-{% for release in sorted_releases reversed %}
-	<tr>
-		<td>{{ release.tag_name }}</td>
-		<td>
-		{% for asset in release.assets %}
-			{% if asset.name contains "Windows-x86.msi" %}
-			<a href="{{ asset.browser_download_url }}">Windows - x86</a>
-			{% endif %}
-		{% endfor %}
-		{% for asset in release.assets %}
-			{% if asset.name contains "Windows-x64.msi" %}
-			<a href="{{ asset.browser_download_url }}">Windows - x64</a>
-			{% endif %}
-		{% endfor %}
-		{% for asset in release.assets %}
-			{% if asset.name contains "MacOSX-x86_64.dmg" %}
-			<a href="{{ asset.browser_download_url }}">OS X</a>
-			{% endif %}
-		{% endfor %}
-		{% for asset in release.assets %}
-			{% if asset.name contains "MacOSX109-x86_64.dmg" %}
-			<a href="{{ asset.browser_download_url }}">OS X Mavericks</a>
-			{% endif %}
-		{% endfor %}
-		{% for asset in release.assets %}
-			{% if asset.name contains "MacOSX1010-x86_64.dmg" %}
-			<a href="{{ asset.browser_download_url }}">OS X Yosemite</a>
-			{% endif %}
-		{% endfor %}
-		{% for asset in release.assets %}
-			{% if asset.name contains "MacOSX1011-x86_64.dmg" %}
-			<a href="{{ asset.browser_download_url }}">OS X El Capitan</a>
-			{% endif %}
-		{% endfor %}
-		{% for asset in release.assets %}
-			{% if asset.name contains "MacOSX1012-x86_64.dmg" %}
-			<a href="{{ asset.browser_download_url }}">macOS Sierra</a>
-			{% endif %}
-		{% endfor %}
-		{% for asset in release.assets %}
-			{% if asset.name contains "Linux-x86_64.deb" %}
-			<a href="{{ asset.browser_download_url }}">Ubuntu/Debian - x86_64</a>
-			{% endif %}
-		{% endfor %}
-		{% for asset in release.assets %}
-			{% if asset.name contains "Linux-i686.deb" %}
-			<a href="{{ asset.browser_download_url }}">Ubuntu/Debian - i686</a>
-			{% endif %}
-		{% endfor %}
-		{% for asset in release.assets %}
-			{% if asset.name contains "Linux-x86_64.rpm" %}
-			<a href="{{ asset.browser_download_url }}">RPM - x86_64</a>
-			{% endif %}
-		{% endfor %}
-		{% for asset in release.assets %}
-			{% if asset.name contains "Linux-i686.rpm" %}
-			<a href="{{ asset.browser_download_url }}">RPM - i686</a>
-			{% endif %}
-		{% endfor %}
-		{% for asset in release.assets %}
-			{% if asset.name contains "Linux-armv6l.deb" %}
-			<a href="{{ asset.browser_download_url }}">Debian - armv6l</a>
-			{% endif %}
-		{% endfor %}
-		</td>
-	</tr>
+<tbody>
+{% assign sorted_releases = (site.github.releases | sort: 'tag_name') %} {% for release in sorted_releases reversed %}
+<tr>
+<td>{{ release.tag_name }}</td>
+<td>
+	{% for asset in release.assets %} {% if asset.name contains "Windows-x86.msi" %}
+	<a href="{{ asset.browser_download_url }}">Windows - x86</a> {% endif %} {% endfor %} {% for asset in release.assets %} {% if asset.name contains "Windows-x64.msi" %}
+	<a href="{{ asset.browser_download_url }}">Windows - x64</a> {% endif %} {% endfor %} {% for asset in release.assets %} {% if asset.name contains "MacOSX-x86_64.dmg" %}
+	<a href="{{ asset.browser_download_url }}">OS X</a> {% endif %} {% endfor %} {% for asset in release.assets %} {% if asset.name contains "MacOSX109-x86_64.dmg" %}
+	<a href="{{ asset.browser_download_url }}">OS X Mavericks</a> {% endif %} {% endfor %} {% for asset in release.assets %} {% if asset.name contains "MacOSX1010-x86_64.dmg" %}
+	<a href="{{ asset.browser_download_url }}">OS X Yosemite</a> {% endif %} {% endfor %} {% for asset in release.assets %} {% if asset.name contains "MacOSX1011-x86_64.dmg" %}
+	<a href="{{ asset.browser_download_url }}">OS X El Capitan</a> {% endif %} {% endfor %} {% for asset in release.assets %} {% if asset.name contains "MacOSX1012-x86_64.dmg" %}
+	<a href="{{ asset.browser_download_url }}">macOS Sierra</a> {% endif %} {% endfor %} {% for asset in release.assets %} {% if asset.name contains "Linux-x86_64.deb" %}
+	<a href="{{ asset.browser_download_url }}">Ubuntu/Debian - x86_64</a> {% endif %} {% endfor %} {% for asset in release.assets %} {% if asset.name contains "Linux-i686.deb" %}
+	<a href="{{ asset.browser_download_url }}">Ubuntu/Debian - i686</a> {% endif %} {% endfor %} {% for asset in release.assets %} {% if asset.name contains "Linux-x86_64.rpm" %}
+	<a href="{{ asset.browser_download_url }}">RPM - x86_64</a> {% endif %} {% endfor %} {% for asset in release.assets %} {% if asset.name contains "Linux-i686.rpm" %}
+	<a href="{{ asset.browser_download_url }}">RPM - i686</a> {% endif %} {% endfor %} {% for asset in release.assets %} {% if asset.name contains "Linux-armv6l.deb" %}
+	<a href="{{ asset.browser_download_url }}">Debian - armv6l</a> {% endif %} {% endfor %}
+</td>
+</tr>
 {% endfor %}
-	</tbody>
+</tbody>
 </table>
 </div>
 <a class="github-button" href="https://github.com/afzaalace/synergy-stable-builds" data-style="mega" aria-label="Star afzaalace/synergy-stable-builds on GitHub">Star</a>
