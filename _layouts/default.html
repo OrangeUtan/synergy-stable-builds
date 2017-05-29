@@ -23,13 +23,15 @@
 		  ga('create', 'UA-4366652-5', 'auto');
 		  ga('send', 'pageview');
 		  var trackOutboundLink = function(url) {
+			_gaq.push(['_trackEvent', 'Control', 'Bounce Rate', '']);
 			ga('send', 'event', 'outbound', 'click', url, {
 			 'transport': 'beacon',
 			 'hitCallback': function(){document.location = url;}
 			});
 		  };
 		  [].forEach.call(document.querySelectorAll("a"), function(el) {
-			el.addEventListener("click", function() {
+			el.addEventListener("click", function(event) {
+			  event.preventDefault();
 			  trackOutboundLink(el.href);
 			});
 		  });
